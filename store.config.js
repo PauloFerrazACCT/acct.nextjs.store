@@ -1,9 +1,9 @@
 module.exports = {
   seo: {
-    title: 'NextJSStore',
-    description: 'Fast Demo Store',
-    titleTemplate: '%s | FastStore',
-    author: 'Store Framework',
+    title: 'Fashion Starter',
+    description: 'ACCT - Fashion Starter',
+    titleTemplate: '%s | Fashion Starter',
+    author: 'ACCT',
   },
 
   // Theming
@@ -14,7 +14,7 @@ module.exports = {
 
   // Platform specific configs for API
   api: {
-    storeId: 'storeframework',
+    storeId: 'fashionstarter',
     workspace: 'master',
     environment: 'vtexcommercestable',
     hideUnavailableItems: true,
@@ -23,22 +23,22 @@ module.exports = {
   // Default session
   session: {
     currency: {
-      code: 'USD',
-      symbol: '$',
+      code: 'BRL',
+      symbol: 'R$',
     },
-    locale: 'en-US',
-    channel: '{"salesChannel":"1","regionId":""}',
-    country: 'USA',
+    locale: 'pt-BR',
+    channel: '{"salesChannel":"2","regionId":""}',
+    country: 'BRA',
     postalCode: null,
     person: null,
   },
 
   // Production URLs
-  storeUrl: 'https://vtexfaststore.com',
-  secureSubdomain: 'https://secure.vtexfaststore.com',
-  checkoutUrl: 'https://secure.vtexfaststore.com/checkout',
-  loginUrl: 'https://secure.vtexfaststore.com/api/io/login',
-  accountUrl: 'https://secure.vtexfaststore.com/api/io/account',
+  storeUrl: 'https://fashion-starter.acct.global',
+  secureSubdomain: 'https://secure.acct.global',
+  checkoutUrl: 'https://secure.acct.global/checkout',
+  loginUrl: 'https://secure.acct.global/api/io/login',
+  accountUrl: 'https://secure.acct.global/api/io/account',
 
   // Lighthouse CI
   lighthouse: {
