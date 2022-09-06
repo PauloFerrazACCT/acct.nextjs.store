@@ -14,6 +14,20 @@ const POST_GRAPHQL_FIELDS = `
             linkBtn
         }
     }
+    bubbleLinksCategoriesTitleCollection{
+      items{
+        title
+      }
+    }
+    bubbleLinksCategoriesImgCollection{
+      items{
+        name
+        link
+        image{
+          url
+        }
+      }
+    }
   `
 
 async function fetchGraphQL(query) {

@@ -3,10 +3,17 @@ import { NextSeo, SiteLinksSearchBoxJsonLd } from 'next-seo'
 import { mark } from 'src/sdk/tests/mark'
 import { getAllPostsForHome } from 'src/lib/api'
 import { CarouselBannerHome } from 'src/components/sections/CarouselBanner'
+import { incentivesMockHeader } from 'src/components/sections/Incentives/incentivesMock'
+import IncentivesHeader from 'src/components/sections/Incentives/IncentivesHeader'
+import { BubbleLinks } from 'src/components/sections/BubbleLinks'
 
 import storeConfig from '../../store.config'
 
-function Page({ carouselBannerHomeCollection }: any) {
+function Page({
+  carouselBannerHomeCollection,
+  bubbleLinksCategoriesTitleCollection,
+  bubbleLinksCategoriesImgCollection,
+}: any) {
   return (
     <>
       {/* SEO */}
@@ -45,6 +52,11 @@ function Page({ carouselBannerHomeCollection }: any) {
       */}
       {/* <RenderPageSections sections={cmsHome.sections} /> */}
       <CarouselBannerHome items={carouselBannerHomeCollection.items} />
+      <IncentivesHeader incentives={incentivesMockHeader} />
+      <BubbleLinks
+        title={bubbleLinksCategoriesTitleCollection.items[0].title}
+        bubbleLinks={bubbleLinksCategoriesImgCollection.items}
+      />
     </>
   )
 }
@@ -52,10 +64,18 @@ function Page({ carouselBannerHomeCollection }: any) {
 export async function getStaticProps() {
   const allData = (await getAllPostsForHome()) ?? []
 
-  const { carouselBannerHomeCollection } = allData
+  const {
+    carouselBannerHomeCollection,
+    bubbleLinksCategoriesTitleCollection,
+    bubbleLinksCategoriesImgCollection,
+  } = allData
 
   return {
-    props: { carouselBannerHomeCollection },
+    props: {
+      carouselBannerHomeCollection,
+      bubbleLinksCategoriesTitleCollection,
+      bubbleLinksCategoriesImgCollection,
+    },
   }
 }
 
