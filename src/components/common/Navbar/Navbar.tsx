@@ -90,7 +90,6 @@ function Navbar() {
         </div>
       </section>
       <NavLinks classes="hidden-mobile" />
-
       {displayNavbar && <NavbarSlider />}
     </header>
   )

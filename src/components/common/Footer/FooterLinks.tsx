@@ -11,19 +11,19 @@ const links = [
     title: 'Our company',
     items: [
       {
-        href: '/',
+        href: '/institutional',
         name: 'About Us',
       },
       {
-        href: '/',
+        href: '/institutional',
         name: 'Our Blog',
       },
       {
-        href: '/',
+        href: '/institutional',
         name: 'Stores',
       },
       {
-        href: '/',
+        href: '/institutional',
         name: 'Work With Us',
       },
     ],
@@ -32,19 +32,19 @@ const links = [
     title: 'Orders & Purchases',
     items: [
       {
-        href: '/',
+        href: '/institutional',
         name: 'Check Order Status',
       },
       {
-        href: '/',
+        href: '/institutional',
         name: 'Returns and Exchanges',
       },
       {
-        href: '/',
+        href: '/institutional',
         name: 'Product Recall',
       },
       {
-        href: '/',
+        href: '/institutional',
         name: 'Gift Cards',
       },
     ],
@@ -53,15 +53,15 @@ const links = [
     title: 'Support & Services',
     items: [
       {
-        href: '/',
+        href: '/institutional',
         name: 'Support Center',
       },
       {
-        href: '/',
+        href: '/institutional',
         name: 'Schedule a Service',
       },
       {
-        href: '/',
+        href: '/institutional',
         name: 'Contact Us',
       },
     ],
@@ -70,15 +70,15 @@ const links = [
     title: 'Partnerships',
     items: [
       {
-        href: '/',
+        href: '/institutional',
         name: 'Affiliate Program',
       },
       {
-        href: '/',
+        href: '/institutional',
         name: 'Advertise with US',
       },
       {
-        href: '/',
+        href: '/institutional',
         name: 'Market Place',
       },
     ],
@@ -123,7 +123,10 @@ function FooterLinks() {
   }
 
   return (
-    <section className={styles.fsFooter} data-fs-footer-links>
+    <section
+      className={`${styles.fsFooter} footer__links`}
+      data-fs-footer-links
+    >
       <div className="display-mobile">
         <Accordion expandedIndices={indicesExpanded} onChange={onChange}>
           {links.map((section, index) => (
@@ -139,14 +142,18 @@ function FooterLinks() {
       </div>
 
       <div className="hidden-mobile">
-        <nav data-fs-footer-links-columns>
+        <div className="footer__links-columns">
           {links.map((section) => (
-            <div key={section.title}>
-              <p data-fs-footer-title>{section.title}</p>
-              <LinksList items={section.items} />
-            </div>
+            <nav key={section.title} data-fs-footer-links-columns>
+              <div>
+                <p data-fs-footer-title className="text__title-mini">
+                  {section.title}
+                </p>
+                <LinksList items={section.items} />
+              </div>
+            </nav>
           ))}
-        </nav>
+        </div>
       </div>
     </section>
   )

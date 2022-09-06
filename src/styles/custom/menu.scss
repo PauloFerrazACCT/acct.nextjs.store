@@ -1,0 +1,175 @@
+@import "src/styles/scaffold";
+@import "../vendors/include-media.scss";
+
+[fashion-ui-menu] {
+  * {
+    color: var(--fs-color-neutral-6);
+    text-decoration: none;
+  }
+
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+[fashion-ui-menu-ul] {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style-type: none;
+  background-color: transparent;
+}
+
+[fashion-ui-menu-li] {
+  display: inline-block;
+  flex: 1;
+  float: left;
+  text-align: center;
+  transition: 0.2s ease-in-out;
+
+  > a {
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+
+    &:hover {
+      color: var(--fs-color-neutral-0);
+      background: var(--fs-color-neutral-7);
+    }
+  }
+
+  &:last-of-type {
+    a {
+      background: var(--fs-color-accent-3);
+    }
+  }
+}
+
+[fashion-ui-menu-ul] [fashion-ui-menu-li] > a {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+[fashion-ui-menu-nav] {
+  width: 100%;
+}
+
+[fashion-ui-mega-menu-flex] {
+  display: flex;
+}
+
+[fashion-ui-mega-menu-between] {
+  display: flex;
+  justify-content: center;
+}
+
+[fashion-ui-mega-menu-column] {
+  padding: 0 1.75rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+[fashion-ui-mega-menu-title] {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--fs-color-neutral-6);
+}
+
+[fashion-ui-mega-menu] ul li a {
+  display: block;
+  font-size: 14px;
+  line-height: 2.5rem;
+}
+
+[fashion-ui-mega-menu] ul li a:hover {
+  text-decoration: underline;
+  transition: color 0.175s cubic-bezier(0, 0, 0.2, 1);
+  -webkit-text-stroke-width: thin;
+}
+
+[fashion-ui-mega-menu-link] {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 900;
+  line-height: 2rem;
+  color: #000000;
+  text-decoration: none;
+}
+
+[fashion-ui-mega-menu-link]:hover {
+  transition: color 0.175s cubic-bezier(0, 0, 0.2, 1);
+  -webkit-text-stroke-width: thin;
+}
+
+[fashion-ui-mega-menu-wrap] {
+  visibility: hidden;
+  opacity: 0;
+}
+
+[fashion-ui-mega-menu] {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  height: 0;
+  padding: 0;
+  padding-bottom: 1rem;
+  overflow: hidden;
+  visibility: hidden;
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 25%);
+  transition: height, 0.2s linear;
+}
+
+[fashion-ui-mega-menu]:hover,
+[fashion-ui-menu-ul] a:hover + [fashion-ui-mega-menu] {
+  height: 450px;
+  min-height: 100%;
+  visibility: visible;
+  transition: height, 0.2s linear;
+}
+
+[fashion-ui-mega-menu]:hover [fashion-ui-mega-menu-wrap],
+[fashion-ui-mega-menu-wrap]:hover [fashion-ui-mega-menu-wrap],
+[fashion-ui-menu-ul] a:hover + [fashion-ui-mega-menu] > [fashion-ui-mega-menu-wrap] {
+  height: inherit;
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.5s linear, opacity 0.5s linear;
+}
+
+[fashion-ui-mega-menu-component] {
+  position: absolute;
+  right: -20;
+  opacity: 0;
+  transition: opacity 1s linear, right 0.6s ease-in-out;
+}
+
+[fashion-ui-mega-menu-component] > * {
+  height: 100%;
+}
+
+[fashion-ui-mega-menu]:hover [fashion-ui-mega-menu-component],
+[fashion-ui-mega-menu-wrap]:hover [fashion-ui-mega-menu-component],
+[fashion-ui-menu-ul] a:hover + [fashion-ui-mega-menu] > [fashion-ui-mega-menu-wrap] [fashion-ui-mega-menu-component] {
+  right: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+.menu-wrap-border-left {
+  height: 400px;
+  margin-top: 20px;
+  border-left: 1px solid #e5e7eb;
+}
+
+.menu-wrap-border-right {
+  padding-left: 10%;
+  margin-top: 20px;
+  border-left: 1px solid #e5e7eb;
+}

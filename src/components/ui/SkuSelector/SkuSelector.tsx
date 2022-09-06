@@ -29,7 +29,7 @@ interface SkuProps {
 }
 
 // TODO: Add the 'color' variant back once the store supports naturally handling color SKUs.
-type Variant = 'label' | 'image'
+type Variant = 'cor' | 'label' | 'image'
 
 export interface SkuSelectorProps {
   /**

@@ -3,6 +3,7 @@ import '../styles/global/resets.scss'
 import '../styles/global/typography.scss'
 import '../styles/global/layout.scss'
 import '../styles/global/components.scss'
+import '../styles/global/custom.scss'
 
 // Replace this with your theme style file
 import '../styles/themes/custom-theme.scss'

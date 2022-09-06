@@ -1,16 +1,15 @@
 import {
+  Icon as UIIcon,
   List as UIList,
   PaymentMethods as UIPaymentMethods,
 } from '@faststore/ui'
 
-import Logo from 'src/components/ui/Logo'
-import IncentivesFooter from 'src/components/sections/Incentives/IncentivesFooter'
 import Icon from 'src/components/ui/Icon'
+import LogoACCT from 'src/components/ui/LogoACCT'
 import Link from 'src/components/ui/Link'
 import SROnly from 'src/components/ui/SROnly'
 import { mark } from 'src/sdk/tests/mark'
 
-import styles from './footer.module.scss'
 import FooterLinks from './FooterLinks'
 
 type FooterProps = {
@@ -39,16 +38,16 @@ export function Footer({
       data-fs-footer-incentives={sectionIncentives}
       data-fs-footer-social={sectionSocial}
       data-fs-footer-payment-methods={sectionPaymentMethods}
-      className={`${styles.fsFooter} layout__content-full`}
+      className="footer"
     >
-      {sectionIncentives && <IncentivesFooter />}
-
-      <div data-fs-footer-nav className="layout__content">
+      <div data-fs-footer-nav className="footer__section layout__content">
         <FooterLinks />
 
         {sectionSocial && (
-          <section data-fs-footer-social>
-            <p data-fs-footer-title>Follow us</p>
+          <section data-fs-footer-social className="footer__social">
+            <p data-fs-footer-title className="text__title-mini">
+              Follow us
+            </p>
             <UIList variant="unordered">
               <li>
                 <Link
@@ -58,7 +57,11 @@ export function Footer({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon width="24px" height="24px" name="Facebook" />
+                  <UIIcon
+                    component={
+                      <Icon width="24px" height="24px" name="Facebook" />
+                    }
+                  />
                 </Link>
               </li>
               <li>
@@ -69,18 +72,11 @@ export function Footer({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon width="24px" height="24px" name="Instagram" />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  variant="footer"
-                  href="https://www.pinterest.com/"
-                  title="Pinterest"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Icon width="24px" height="24px" name="Pinterest" />
+                  <UIIcon
+                    component={
+                      <Icon width="24px" height="24px" name="Instagram" />
+                    }
+                  />
                 </Link>
               </li>
               <li>
@@ -91,7 +87,58 @@ export function Footer({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon width="24px" height="24px" name="Twitter" />
+                  <UIIcon
+                    component={
+                      <Icon width="24px" height="24px" name="Twitter" />
+                    }
+                  />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  variant="footer"
+                  href="https://www.youtube.com/"
+                  title="Youtube"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="youtubeIcon"
+                >
+                  <UIIcon
+                    component={
+                      <Icon width="24px" height="24px" name="Youtube" />
+                    }
+                  />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  variant="footer"
+                  href="https://www.tiktok.com/"
+                  title="Tiktok"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="tiktokIcon"
+                >
+                  <UIIcon
+                    component={
+                      <Icon width="24px" height="24px" name="Tiktok" />
+                    }
+                  />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  variant="footer"
+                  href="https://www.pinterest.com/"
+                  title="Pinterest"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <UIIcon
+                    component={
+                      <Icon width="24px" height="24px" name="Pinterest" />
+                    }
+                  />
                 </Link>
               </li>
             </UIList>
@@ -99,12 +146,12 @@ export function Footer({
         )}
       </div>
 
-      <div data-fs-footer-note className="layout__content">
-        <Logo />
-
+      <div data-fs-footer-note className="footer__note layout__content">
         {sectionPaymentMethods && (
           <UIPaymentMethods data-fs-footer-payment-methods>
-            <p data-fs-footer-title>Payment Methods</p>
+            <p data-fs-footer-title className="text__title-mini">
+              Payment Methods
+            </p>
             <UIList>
               <li>
                 <Icon width="34px" height="24px" name="Visa" />
@@ -141,15 +188,24 @@ export function Footer({
             </UIList>
           </UIPaymentMethods>
         )}
-
-        <div data-fs-footer-copyright className="text__legend">
-          <p>This website uses VTEX technology</p>
-          <p>
-            In-store price may vary. Prices and offers are subject to change.
-            2021 Store name. All rights reserved. Store is a trademark of Store
-            and its affiliated companies.
-          </p>
-          <address>Mount St, 000, New York / NY - 00000.</address>
+      </div>
+      <div
+        data-fs-footer-copyright
+        className="footer__copyright layout__wrapper"
+      >
+        <div className="grid-content">
+          <span className="text-body-small">
+            <p>
+              In-store pricing may vary. Prices and offers are subject to
+              change. © 2021 Store name. All rights reserved. Store is a
+              trademark of Store and its affiliated companies. -
+              NIF/CNPJ/EIN/UTR
+            </p>
+          </span>
+          <span className="text-body-small developed--wrapper">
+            <p>Created and developed by</p>
+            <LogoACCT />
+          </span>
         </div>
       </div>
     </footer>

@@ -16,12 +16,11 @@ export function getSkuSlug(
     return slugsMap[slugsMapKey]
   }
 
+  console.info(dominantVariation)
   const possibleVariants = Object.keys(slugsMap)
 
   const firstVariationForDominantValue = possibleVariants.find((slug) =>
-    slug.includes(
-      `${dominantVariation}-${selectedVariations[dominantVariation]}`
-    )
+    slug.includes(slugsMapKey)
   )
 
   return slugsMap[firstVariationForDominantValue ?? possibleVariants[0]]
