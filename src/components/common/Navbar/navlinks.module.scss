@@ -85,7 +85,8 @@
   }
 
   @include media(">=notebook") {
-    padding-top: var(--fs-navlinks-padding-top-notebook);
+    // padding-top: var(--fs-navlinks-padding-top-notebook);
+    border-top: 1px solid #e5e7eb;
 
     // padding-bottom: var(--fs-navlinks-padding-bottom-notebook);
 

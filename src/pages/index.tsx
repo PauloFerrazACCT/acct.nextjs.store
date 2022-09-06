@@ -1,15 +1,12 @@
 import { NextSeo, SiteLinksSearchBoxJsonLd } from 'next-seo'
-import type { ContentData } from '@vtex/client-cms'
 
-import RenderPageSections from 'src/components/cms/RenderPageSections'
 import { mark } from 'src/sdk/tests/mark'
-import { getCMSPageDataByContentType } from 'src/cms/client'
+import { getAllPostsForHome } from 'src/lib/api'
+import { CarouselBannerHome } from 'src/components/sections/CarouselBanner'
 
 import storeConfig from '../../store.config'
 
-export type Props = { cmsHome: ContentData }
-
-function Page({ cmsHome }: Props) {
+function Page({ carouselBannerHomeCollection }: any) {
   return (
     <>
       {/* SEO */}
@@ -46,16 +43,19 @@ function Page({ cmsHome }: Props) {
         If needed, wrap your component in a <Section /> component
         (not the HTML tag) before rendering it here.
       */}
-      <RenderPageSections sections={cmsHome.sections} />
+      {/* <RenderPageSections sections={cmsHome.sections} /> */}
+      <CarouselBannerHome items={carouselBannerHomeCollection.items} />
     </>
   )
 }
 
 export async function getStaticProps() {
-  const cmsHome = await getCMSPageDataByContentType('home')
+  const allData = (await getAllPostsForHome()) ?? []
+
+  const { carouselBannerHomeCollection } = allData
 
   return {
-    props: { cmsHome },
+    props: { carouselBannerHomeCollection },
   }
 }
 

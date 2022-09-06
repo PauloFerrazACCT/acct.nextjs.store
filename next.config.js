@@ -4,6 +4,10 @@
  * @type {import('next').NextConfig}
  * */
 const nextConfig = {
+  images: {
+    domains: ['images.ctfassets.net'],
+  },
+
   /* config options here */
   i18n: {
     locales: ['en-US'],
