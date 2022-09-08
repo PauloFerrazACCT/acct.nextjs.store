@@ -1,0 +1,17 @@
+:root {
+  --fs-color-background-shelf : #f5f5f5;
+}
+
+.collection-shelf {
+  display: flex;
+  flex-wrap: wrap;
+
+  .collection-card__content {
+    margin-top: 0.625rem;
+  }
+}
+
+section[class*="page__section-shelf__horizontal"] {
+  min-width: 100%;
+  background-color: var(--fs-color-background-shelf);
+}

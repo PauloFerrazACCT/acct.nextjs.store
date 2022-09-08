@@ -112,7 +112,13 @@ body {
   // --------------------------------------------------------
 
   // FACE
-  --fs-text-face-body: -apple-system, system-ui, BlinkMacSystemFont, sans-serif;
+  --fs-text-face-body:
+    "Roboto",
+    "Lato",
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    sans-serif;
   --fs-text-face-title: var(--fs-text-face-body);
 
   // WEIGHT
@@ -295,4 +301,42 @@ body {
   --fs-shadow: none;
   --fs-shadow-darker: 0 0 10px rgb(0 0 0 / 20%);
   --fs-shadow-hover: 0 0 0 1px var(--fs-color-main-4);
+
+  // BUTTON
+
+  --fs-btn-padding: 0.5rem 1.5rem;
+  --fs-btn-padding-large: 0.75rem 1.5rem;
+
+  --fs-btn-primary-radius: 0.25rem;
+
+  --fs-btn-primary-color-default: var(--fs-color-neutral-7);
+  --fs-btn-primary-bg-default: var(--fs-color-accent-3);
+  --fs-tag-bg-default: #94e7ad;
+  --fs-tag-border-default: var(--fs-color-accent-3);
+  --fs-btn-primary-border-default: 1px solid var(--fs-color-accent-3);
+  --fs-btn-primary-bg-hover: var(--fs-color-accent-1);
+  --fs-btn-primary-border-hover: 1px solid var(--fs-color-accent-1);
+  --fs-btn-primary-color-disable: var(--fs-color-accent-5);
+
+  --fs-btn-secondary-color-default: var(--fs-color-neutral-0);
+  --fs-btn-secondary-bg-default: var(--fs-color-neutral-7);
+  --fs-btn-secondary-border-default: 1px solid var(--fs-color-neutral-7);
+  --fs-btn-secondary-bg-hover: var(--fs-color-main-2);
+  --fs-btn-secondary-border-hover: 1px solid var(--fs-color-main-2);
+  --fs-btn-secondary-bg-disable: #e0e0e0;
+  --fs-btn-secondary-color-disable: var(--fs-color-main-0);
+
+  --fs-btn-ghost-color-default: var(--fs-color-neutral-7);
+  --fs-btn-ghost-bg-default: transparent;
+  --fs-btn-ghost-border-default: 1px solid var(--fs-color-neutral-7);
+  --fs-btn-ghost-border-hover: 1px solid var(--fs-color-main-2);
+  --fs-btn-ghost-decoration-hover: underline;
+  --fs-btn-ghost-bg-disable: var(--fs-color-main-0);
+  --fs-btn-ghost-color-disable: var(--fs-color-main-0);
+
+  --fs-btn-menu-color-default: var(--fs-color-neutral-7);
+  --fs-btn-menu-bg-default: transparent;
+  --fs-btn-menu-border-default: 1px solid transparent;
+  --fs-btn-menu-decoration-hover: underline;
+  --fs-btn-menu-color-disable: var(--fs-color-main-0);
 }

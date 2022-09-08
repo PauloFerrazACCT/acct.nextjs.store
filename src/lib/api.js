@@ -28,6 +28,73 @@ const POST_GRAPHQL_FIELDS = `
         }
       }
     }
+    blockOurColectionsCollection(where: { name: "Home"}){
+      items {
+        title
+        description
+        seeAllText
+        seeAllLink
+      }
+    }
+    infoCardOurColectionsCollection(where: { name: "Home"}){
+      items {
+      title
+      description
+      image {
+       url
+       title
+       width
+       height
+       description
+     }
+      labelBtn
+      linkBtn
+      order
+     }
+    }
+    blockCollectionVerticalHomeCollection {
+      items {
+        title
+        description
+        seeAllText
+        seeAllLink
+      }
+    }
+    infoCardCollectionVerticalHomeCollection {
+      items {
+        title
+        description
+        image {
+          url
+          title
+          width
+          height
+          description
+        }
+        labelBtn
+        linkBtn
+      }
+    }
+    blocoMarcasCollection {
+      items {
+        title
+        seeAllLink
+        linkText
+      }
+    }
+    dadosDasMarcasCollection {
+      items {
+        name
+        link
+        img {
+          url
+          title
+          width
+          height
+          description
+        }
+      }
+    }
   `
 
 async function fetchGraphQL(query) {
@@ -47,7 +114,7 @@ async function fetchGraphQL(query) {
 export async function getAllPostsForHome() {
   const { data } = await fetchGraphQL(
     `query HomePageQuery{
-            ${POST_GRAPHQL_FIELDS}          
+            ${POST_GRAPHQL_FIELDS}
         }`
   )
 

@@ -5,7 +5,14 @@ import { getAllPostsForHome } from 'src/lib/api'
 import { CarouselBannerHome } from 'src/components/sections/CarouselBanner'
 import { incentivesMockHeader } from 'src/components/sections/Incentives/incentivesMock'
 import IncentivesHeader from 'src/components/sections/Incentives/IncentivesHeader'
-import { BubbleLinks } from 'src/components/sections/BubbleLinks'
+import {
+  BubbleLinks,
+  BubbleLinksBrands,
+} from 'src/components/sections/BubbleLinks'
+import {
+  CollectionShelf,
+  CollectionShelfVertical,
+} from 'src/components/sections/CollectionShelf'
 
 import storeConfig from '../../store.config'
 
@@ -13,7 +20,17 @@ function Page({
   carouselBannerHomeCollection,
   bubbleLinksCategoriesTitleCollection,
   bubbleLinksCategoriesImgCollection,
+  blockOurColectionsCollection,
+  infoCardOurColectionsCollection,
+  blockCollectionVerticalHomeCollection,
+  infoCardCollectionVerticalHomeCollection,
+  blocoMarcasCollection,
+  dadosDasMarcasCollection,
 }: any) {
+  const collections = infoCardOurColectionsCollection.items.sort(
+    (a: any, b: any) => a?.order - b?.order
+  )
+
   return (
     <>
       {/* SEO */}
@@ -57,6 +74,24 @@ function Page({
         title={bubbleLinksCategoriesTitleCollection.items[0].title}
         bubbleLinks={bubbleLinksCategoriesImgCollection.items}
       />
+      {collections && (
+        <CollectionShelf
+          {...blockOurColectionsCollection.items[0]}
+          data={collections}
+        />
+      )}
+      {infoCardCollectionVerticalHomeCollection.items && (
+        <CollectionShelfVertical
+          {...blockCollectionVerticalHomeCollection.items[0]}
+          data={infoCardCollectionVerticalHomeCollection.items}
+        />
+      )}
+      {dadosDasMarcasCollection && (
+        <BubbleLinksBrands
+          {...blocoMarcasCollection.items[0]}
+          data={dadosDasMarcasCollection.items}
+        />
+      )}
     </>
   )
 }
@@ -68,6 +103,12 @@ export async function getStaticProps() {
     carouselBannerHomeCollection,
     bubbleLinksCategoriesTitleCollection,
     bubbleLinksCategoriesImgCollection,
+    blockOurColectionsCollection,
+    infoCardOurColectionsCollection,
+    blockCollectionVerticalHomeCollection,
+    infoCardCollectionVerticalHomeCollection,
+    blocoMarcasCollection,
+    dadosDasMarcasCollection,
   } = allData
 
   return {
@@ -75,6 +116,12 @@ export async function getStaticProps() {
       carouselBannerHomeCollection,
       bubbleLinksCategoriesTitleCollection,
       bubbleLinksCategoriesImgCollection,
+      blockOurColectionsCollection,
+      infoCardOurColectionsCollection,
+      blockCollectionVerticalHomeCollection,
+      infoCardCollectionVerticalHomeCollection,
+      blocoMarcasCollection,
+      dadosDasMarcasCollection,
     },
   }
 }
