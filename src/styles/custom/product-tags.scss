@@ -1,0 +1,29 @@
+@import "src/styles/scaffold";
+
+[data-tags-container] {
+  display: flex;
+  gap: 12px;
+  padding: var(--fs-spacing-0) var(--fs-spacing-3) var(--fs-spacing-3);
+}
+
+[data-tag-category] {
+  padding: 2px 14px;
+  font-size: var(--fs-text-size-0);
+  font-weight: var(--fs-text-weight-bold);
+  color: var(--fs-color-accent-4);
+  text-decoration: none;
+  background-color: var(--fs-color-accent-1);
+  border: 2px solid var(--fs-color-accent-4);
+  border-radius: 50px;
+}
+
+[data-tag-collection] {
+  padding: 2px 14px;
+  font-size: var(--fs-text-size-0);
+  font-weight: var(--fs-text-weight-bold);
+  color: var(--fs-color-accent-4);
+  text-decoration: none;
+  background-color: var(--fs-color-accent-1);
+  border: 2px solid var(--fs-color-accent-4);
+  border-radius: 50px;
+}

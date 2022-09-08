@@ -26,6 +26,8 @@
     "node": ">=14"
   },
   "dependencies": {
+    "@acctglobal/product-tags": "^0.3.2",
+    "@acctglobal/shareproduct": "^0.2.2",
     "@builder.io/partytown": "^0.6.1",
     "@envelop/core": "^1.2.0",
     "@envelop/graphql-jit": "^1.1.1",

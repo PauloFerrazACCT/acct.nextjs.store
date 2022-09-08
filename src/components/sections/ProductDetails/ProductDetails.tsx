@@ -2,6 +2,7 @@ import { gql } from '@faststore/graphql-utils'
 import { sendAnalyticsEvent } from '@faststore/sdk'
 import { useEffect, useState } from 'react'
 import type { CurrencyCode, ViewItemEvent } from '@faststore/sdk'
+import ShareProduct from '@acctglobal/shareproduct'
 
 import OutOfStock from 'src/components/product/OutOfStock'
 import { DiscountBadge } from 'src/components/ui/Badge'
@@ -20,6 +21,7 @@ import type { ProductDetailsFragment_ProductFragment } from '@generated/graphql'
 import type { AnalyticsItem } from 'src/sdk/analytics/types'
 import Selectors from 'src/components/ui/SkuSelector'
 
+import useShareProductsUrl from './useShareProductsUrl'
 import Section from '../Section'
 
 interface Props {
@@ -29,6 +31,14 @@ interface Props {
 function ProductDetails({ product: staleProduct }: Props) {
   const { currency } = useSession()
   const [addQuantity, setAddQuantity] = useState(1)
+
+  let locationHref = ''
+
+  if (typeof window !== 'undefined') {
+    locationHref = window.location.href
+  }
+
+  const url = useShareProductsUrl(locationHref)
 
   // Stale while revalidate the product for fetching the new price etc
   const { data, isValidating } = useProduct(staleProduct.id, {
@@ -120,15 +130,46 @@ function ProductDetails({ product: staleProduct }: Props) {
           <ProductTitle
             title={<h1>{name}</h1>}
             label={
-              <DiscountBadge listPrice={listPrice} spotPrice={lowPrice} big />
+              <ShareProduct
+                shareWebSocials="Compartilhe nas redes"
+                shareLinks={url}
+                productURL={locationHref}
+              />
             }
-            refNumber={productId}
           />
         </header>
 
         <ImageGallery images={productImages} />
 
         <section className="product-details__settings">
+          <section className="product-details__values">
+            {lowPrice !== 0 && (
+              <>
+                <div className="product-details__prices">
+                  <Price
+                    value={listPrice}
+                    formatter={useFormattedPrice}
+                    testId="list-price"
+                    data-value={listPrice}
+                    variant="listing"
+                    classes="text__legend"
+                    SRText="Original price:"
+                  />
+                  <Price
+                    value={lowPrice}
+                    formatter={useFormattedPrice}
+                    testId="price"
+                    data-value={lowPrice}
+                    variant="spot"
+                    classes="text__lead"
+                    SRText="Sale Price:"
+                  />
+                </div>
+                <DiscountBadge listPrice={listPrice} spotPrice={lowPrice} big />
+              </>
+            )}
+          </section>
+
           {skuVariants && (
             <Selectors
               slugsMap={skuVariants.slugsMap}
@@ -138,30 +179,6 @@ function ProductDetails({ product: staleProduct }: Props) {
           )}
 
           <section className="product-details__values">
-            <div className="product-details__prices">
-              <Price
-                value={listPrice}
-                formatter={useFormattedPrice}
-                testId="list-price"
-                data-value={listPrice}
-                variant="listing"
-                classes="text__legend"
-                SRText="Original price:"
-              />
-              <Price
-                value={lowPrice}
-                formatter={useFormattedPrice}
-                testId="price"
-                data-value={lowPrice}
-                variant="spot"
-                classes="text__lead"
-                SRText="Sale Price:"
-              />
-            </div>
-            {/* <div className="prices">
-              <p className="price__old text__legend">{formattedListPrice}</p>
-              <p className="price__new">{isValidating ? '' : formattedPrice}</p>
-            </div> */}
             <QuantitySelector min={1} max={10} onChange={setAddQuantity} />
           </section>
           {/* NOTE: A loading skeleton had to be used to avoid a Lighthouse's
@@ -268,8 +285,8 @@ export const fragment = gql`
       productGroupID
       skuVariants {
         activeVariations
-        slugsMap(dominantVariantName: "Color")
-        availableVariations(dominantVariantName: "Color")
+        slugsMap(dominantVariantName: "Cor")
+        availableVariations(dominantVariantName: "Cor")
       }
     }
 

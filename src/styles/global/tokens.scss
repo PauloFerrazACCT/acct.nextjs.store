@@ -20,7 +20,7 @@ body {
   --fs-color-main-4: #000000;
 
   --fs-color-accent-0: #d0eed0; // Lightest
-  --fs-color-accent-1: #6db16f;
+  --fs-color-accent-1: #94e7ad;
   --fs-color-accent-2: #6db16f;
   --fs-color-accent-3: #77da7a;
   --fs-color-accent-4: #2a7641;
@@ -60,9 +60,9 @@ body {
   // COMPONENTS & STATES
   --fs-color-body-bkg: var(--fs-color-neutral-0);
 
-  --fs-color-action-text: var(--fs-color-text-inverse);
-  --fs-color-action-bkg: var(--fs-color-accent-4);
-  --fs-color-action-bkg-hover: var(--fs-color-accent-3);
+  --fs-color-action-text: var(--fs-color-text);
+  --fs-color-action-bkg: var(--fs-color-accent-3);
+  --fs-color-action-bkg-hover: var(--fs-color-accent-4);
   --fs-color-action-bkg-active: var(--fs-color-accent-2);
   --fs-color-action-bkg-light: var(--fs-color-neutral-0);
   --fs-color-action-bkg-light-active: var(--fs-color-tertiary-bkg-light);
@@ -74,7 +74,7 @@ body {
   --fs-color-link-inverse: var(--fs-color-neutral-0);
 
   --fs-color-text: var(--fs-color-neutral-7);
-  --fs-color-text-light: var(--fs-color-neutral-6);
+  --fs-color-text-light: var(--fs-color-neutral-4);
   --fs-color-text-inverse: var(--fs-color-neutral-0);
   --fs-color-text-display: var(--fs-color-neutral-7);
 
