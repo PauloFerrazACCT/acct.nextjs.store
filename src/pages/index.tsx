@@ -11,7 +11,7 @@ import {
 } from 'src/components/sections/BubbleLinks'
 import {
   CollectionShelf,
-  // CollectionShelfVertical,
+  CollectionShelfVertical,
 } from 'src/components/sections/CollectionShelf'
 
 import storeConfig from '../../store.config'
@@ -22,6 +22,8 @@ function Page({
   bubbleLinksCategoriesImgCollection,
   blockOurColectionsCollection,
   infoCardOurColectionsCollection,
+  blockCollectionVerticalHomeCollection,
+  infoCardCollectionVerticalHomeCollection,
   blocoMarcasCollection,
   dadosDasMarcasCollection,
 }: any) {
@@ -78,7 +80,12 @@ function Page({
           data={collections}
         />
       )}
-
+      {infoCardCollectionVerticalHomeCollection.items && (
+        <CollectionShelfVertical
+          {...blockCollectionVerticalHomeCollection.items[0]}
+          data={infoCardCollectionVerticalHomeCollection.items}
+        />
+      )}
       {dadosDasMarcasCollection && (
         <BubbleLinksBrands
           {...blocoMarcasCollection.items[0]}
@@ -98,6 +105,8 @@ export async function getStaticProps() {
     bubbleLinksCategoriesImgCollection,
     blockOurColectionsCollection,
     infoCardOurColectionsCollection,
+    blockCollectionVerticalHomeCollection,
+    infoCardCollectionVerticalHomeCollection,
     blocoMarcasCollection,
     dadosDasMarcasCollection,
   } = allData
@@ -109,6 +118,8 @@ export async function getStaticProps() {
       bubbleLinksCategoriesImgCollection,
       blockOurColectionsCollection,
       infoCardOurColectionsCollection,
+      blockCollectionVerticalHomeCollection,
+      infoCardCollectionVerticalHomeCollection,
       blocoMarcasCollection,
       dadosDasMarcasCollection,
     },

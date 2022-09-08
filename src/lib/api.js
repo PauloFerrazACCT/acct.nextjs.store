@@ -52,6 +52,29 @@ const POST_GRAPHQL_FIELDS = `
       order
      }
     }
+    blockCollectionVerticalHomeCollection {
+      items {
+        title
+        description
+        seeAllText
+        seeAllLink
+      }
+    }
+    infoCardCollectionVerticalHomeCollection {
+      items {
+        title
+        description
+        image {
+          url
+          title
+          width
+          height
+          description
+        }
+        labelBtn
+        linkBtn
+      }
+    }
     blocoMarcasCollection {
       items {
         title
