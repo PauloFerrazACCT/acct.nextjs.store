@@ -6,6 +6,10 @@ import { CarouselBannerHome } from 'src/components/sections/CarouselBanner'
 import { incentivesMockHeader } from 'src/components/sections/Incentives/incentivesMock'
 import IncentivesHeader from 'src/components/sections/Incentives/IncentivesHeader'
 import { BubbleLinks } from 'src/components/sections/BubbleLinks'
+import {
+  CollectionShelf,
+  // CollectionShelfVertical,
+} from 'src/components/sections/CollectionShelf'
 
 import storeConfig from '../../store.config'
 
@@ -13,6 +17,8 @@ function Page({
   carouselBannerHomeCollection,
   bubbleLinksCategoriesTitleCollection,
   bubbleLinksCategoriesImgCollection,
+  blockOurColectionsCollection,
+  infoCardOurColectionsCollection,
 }: any) {
   return (
     <>
@@ -57,6 +63,12 @@ function Page({
         title={bubbleLinksCategoriesTitleCollection.items[0].title}
         bubbleLinks={bubbleLinksCategoriesImgCollection.items}
       />
+      {blockOurColectionsCollection && (
+        <CollectionShelf
+          {...blockOurColectionsCollection.items[0]}
+          data={infoCardOurColectionsCollection.items}
+        />
+      )}
     </>
   )
 }
@@ -68,6 +80,8 @@ export async function getStaticProps() {
     carouselBannerHomeCollection,
     bubbleLinksCategoriesTitleCollection,
     bubbleLinksCategoriesImgCollection,
+    blockOurColectionsCollection,
+    infoCardOurColectionsCollection,
   } = allData
 
   return {
@@ -75,6 +89,8 @@ export async function getStaticProps() {
       carouselBannerHomeCollection,
       bubbleLinksCategoriesTitleCollection,
       bubbleLinksCategoriesImgCollection,
+      blockOurColectionsCollection,
+      infoCardOurColectionsCollection,
     },
   }
 }
