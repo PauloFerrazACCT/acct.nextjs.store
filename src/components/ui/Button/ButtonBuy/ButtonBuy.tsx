@@ -15,7 +15,7 @@ function ButtonBuy({ children, ...otherProps }: Props) {
       data-fs-button-variant="buy"
       {...otherProps}
     >
-      <Icon name="ShoppingCart" width={18} height={18} weight="bold" />
+      <Icon name="ShoppingBag" width={18} height={18} weight="bold" />
       {children}
     </Button>
   )
