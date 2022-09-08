@@ -126,6 +126,13 @@
   margin: 0 auto;
   max-width: 1280px;
 }
+.page__section.page__section-shelf__vertical{
+  .collection-card__img {
+    img {
+      object-fit: cover;
+    }
+  }
+}
 
 .collection-shelf__horizontal {
   display: flex;
