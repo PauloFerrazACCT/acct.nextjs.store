@@ -7,8 +7,12 @@ interface Props {
   bubbleLinks: Array<{
     name?: string
     link: string
-    image: any
+    image: IContentfulimage
   }>
+}
+
+interface IContentfulimage {
+  [key: string]: string
 }
 
 function BubbleLinks({ title, variant = 'default', bubbleLinks }: Props) {
@@ -27,9 +31,9 @@ function BubbleLinks({ title, variant = 'default', bubbleLinks }: Props) {
                 {imageData && (
                   <Image
                     src={imageData.url}
-                    alt={item.name ?? ''}
-                    width={90}
-                    height={90}
+                    alt={imageData.title ? imageData.title : item.name ?? ''}
+                    width={imageData.width ?? 90}
+                    height={imageData.height ?? 90}
                     className="bubble-links__img"
                   />
                 )}

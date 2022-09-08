@@ -28,7 +28,7 @@ const CollectionCard = ({ variant = 'default', data }: Props) => {
             src={image.url}
             width={308}
             height={470}
-            alt={image.title}
+            alt={image.title ?? ''}
             sizes="(min-width: 75em) 33vw,
             (min-width: 48em) 50vw,
             100vw"
