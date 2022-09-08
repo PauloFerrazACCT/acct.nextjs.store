@@ -52,6 +52,26 @@ const POST_GRAPHQL_FIELDS = `
       order
      }
     }
+    blocoMarcasCollection {
+      items {
+        title
+        seeAllLink
+        linkText
+      }
+    }
+    dadosDasMarcasCollection {
+      items {
+        name
+        link
+        img {
+          url
+          title
+          width
+          height
+          description
+        }
+      }
+    }
   `
 
 async function fetchGraphQL(query) {
