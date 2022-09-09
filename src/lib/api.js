@@ -52,6 +52,21 @@ const POST_GRAPHQL_FIELDS = `
       order
      }
     }
+    categoryTilesHomeCollection {
+      items {
+        image {
+          url
+          title
+          width
+          height
+          description
+        }
+        description
+        title
+        linkBtn
+        labelBtn
+      }
+    }
     blockCollectionVerticalHomeCollection {
       items {
         title

@@ -1,0 +1,120 @@
+@import "../vendors/include-media.scss";
+
+.category-tile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-right: 0.625rem;
+  padding-left: 0.625rem;
+
+  @include media("<=tablet") {
+    flex-direction: column;
+  }
+}
+
+.category-tile__rectangle {
+  position: relative;
+  width: 100%;
+  min-height: 154px;
+  overflow: hidden;
+  background: var(--fs-color-neutral-1);
+
+  @include media("<=tablet") {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .category-tile__content {
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+
+    @include media("<=tablet") {
+      text-align: end;
+    }
+  }
+
+  .category-tile__img {
+    position: absolute;
+    top: -60px;
+    width: 100%;
+    padding: 0;
+
+    @include media("<=tablet") {
+      top: -30px;
+      right: -140px;
+      width: 140%;
+      padding: 0;
+    }
+  }
+}
+
+.category-tile__square {
+  position: relative;
+  width: calc(50% - 8px);
+  padding: 16px 0 0;
+  margin: 0;
+  overflow: hidden;
+
+  &:nth-child(3) {
+    margin: 0 0 0 -6px;
+
+    @include media("<=tablet") {
+      margin: 0;
+    }
+  }
+
+  @include media("<=tablet") {
+    width: 100%;
+    padding: 1rem 0;
+    margin: 0;
+  }
+
+  .category-tile__content {
+    right: 0;
+    padding: 40px;
+    text-align: end;
+
+    @include media("<=tablet") {
+      padding: 20px;
+    }
+  }
+
+  .category-tile__img {
+    width: 100%;
+
+    @include media("<=tablet") {
+      width: 100%;
+    }
+  }
+}
+
+.category-tile__content {
+  position: absolute;
+  z-index: 2;
+}
+
+.category-tile__title {
+  font-size: 24px;
+  font-weight: var(--fs-text-weight-bold);
+  line-height: 32px;
+  color: var(--fs-color-neutral-7);
+}
+
+.category-tile__description {
+  display: block;
+  margin: var(--fs-spacing-1) auto;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--fs-color-neutral-7);
+}
+
+.category-tile__button {
+  display: inline-block;
+  padding: var(--fs-spacing-1) var(--fs-spacing-4);
+  color: var(--fs-color-neutral-7);
+  text-decoration: none;
+  background-color: var(--fs-color-accent-3);
+  border-radius: 4px;
+}
