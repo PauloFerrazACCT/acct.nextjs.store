@@ -52,6 +52,17 @@ const POST_GRAPHQL_FIELDS = `
       order
      }
     }
+    productShelfCollection(
+      where: { name: "Home" }
+    ) {
+      items {
+        title
+        itemsQuantifyOnMobile
+        itemsQuantifyOnDesktop
+        first
+        categoryCode
+      }
+    }
     categoryTilesHomeCollection {
       items {
         image {

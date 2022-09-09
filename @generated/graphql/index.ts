@@ -747,6 +747,12 @@ export type ProductSummary_ProductFragment = {
       seller: { identifier: string }
     }>
   }
+  additionalProperty: Array<{
+    name: string
+    propertyID: string
+    value: any
+    valueReference: string
+  }>
 }
 
 export type Filter_Facets_StoreFacetBoolean_Fragment = {
@@ -1063,6 +1069,12 @@ export type ProductsQueryQuery = {
               seller: { identifier: string }
             }>
           }
+          additionalProperty: Array<{
+            name: string
+            propertyID: string
+            value: any
+            valueReference: string
+          }>
         }
       }>
     }
@@ -1097,6 +1109,12 @@ export type SearchSuggestionsQueryQuery = {
             seller: { identifier: string }
           }>
         }
+        additionalProperty: Array<{
+          name: string
+          propertyID: string
+          value: any
+          valueReference: string
+        }>
       }>
     }
   }

@@ -16,6 +16,8 @@ import { useFormattedPrice } from 'src/sdk/product/useFormattedPrice'
 import { useProductLink } from 'src/sdk/product/useProductLink'
 import type { ProductSummary_ProductFragment } from '@generated/graphql'
 import styles from 'src/components/product/ProductCard/product-card.module.scss'
+import { ButtonBuy } from 'src/components/ui/Button'
+import { useBuyButton } from 'src/sdk/cart/useBuyButton'
 
 type Variant = 'wide' | 'default'
 
@@ -34,18 +36,41 @@ function ProductCard({
   variant = 'default',
   bordered = false,
   aspectRatio = 1,
-  ButtonBuy,
+  // ButtonBuy,
   ...otherProps
 }: ProductCardProps) {
   const {
+    id,
     sku,
+    name: variantName,
+    gtin,
+    brand,
+    isVariantOf,
     isVariantOf: { name },
     image: [img],
     offers: {
       lowPrice: spotPrice,
-      offers: [{ listPrice, availability }],
+      offers: [{ price, listPrice, availability, seller }],
     },
+    additionalProperty,
   } = product
+
+  const buyProps = useBuyButton({
+    id,
+    price,
+    listPrice,
+    seller,
+    quantity: 1,
+    itemOffered: {
+      sku,
+      name: variantName,
+      gtin,
+      image: [img],
+      brand,
+      isVariantOf,
+      additionalProperty,
+    },
+  })
 
   const linkProps = useProductLink({ product, selectedOffer: 0, index })
   const outOfStock = availability !== 'https://schema.org/InStock'
@@ -55,7 +80,8 @@ function ProductCard({
       data-fs-product-card
       data-fs-product-card-variant={variant}
       data-fs-product-card-bordered={bordered}
-      data-fs-product-card-actionable={!!ButtonBuy}
+      data-fs-product-card-actionable={!outOfStock}
+      // data-fs-product-card-actionable={!!ButtonBuy}
       data-fs-product-card-sku={sku}
       className={styles.fsProductCard}
       {...otherProps}
@@ -105,9 +131,10 @@ function ProductCard({
         ) : (
           <DiscountBadge listPrice={listPrice} spotPrice={spotPrice} />
         )}
-        {!!ButtonBuy && (
+        {!outOfStock && (
           <UIProductCardActions data-fs-product-card-actions>
-            {ButtonBuy}
+            <ButtonBuy {...buyProps}> Shop Now </ButtonBuy>
+            {/* {ButtonBuy} */}
           </UIProductCardActions>
         )}
       </UIProductCardContent>
@@ -151,6 +178,13 @@ export const fragment = gql`
           identifier
         }
       }
+    }
+
+    additionalProperty {
+      name
+      propertyID
+      value
+      valueReference
     }
   }
 `

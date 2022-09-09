@@ -7,6 +7,20 @@
 
   .text__title-section {
     margin-bottom: var(--fs-spacing-3);
+    text-align: center;
+  }
+}
+
+.text__subtitle-section {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--fs-spacing-4);
+  color: black;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 

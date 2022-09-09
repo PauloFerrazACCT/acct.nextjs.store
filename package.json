@@ -26,6 +26,7 @@
     "node": ">=14"
   },
   "dependencies": {
+    "@acctglobal/carousel-universal": "^0.2.4",
     "@acctglobal/product-tags": "^0.3.2",
     "@acctglobal/shareproduct": "^0.2.2",
     "@builder.io/partytown": "^0.6.1",
