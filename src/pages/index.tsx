@@ -1,4 +1,5 @@
 import { NextSeo, SiteLinksSearchBoxJsonLd } from 'next-seo'
+import { Suspense } from 'react'
 
 import { mark } from 'src/sdk/tests/mark'
 import { getAllPostsForHome } from 'src/lib/api'
@@ -14,6 +15,8 @@ import {
   CollectionShelfVertical,
 } from 'src/components/sections/CollectionShelf'
 import { CategoryTiles } from 'src/components/sections/CategoryTiles'
+import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
+import ProductShelfCustom from 'src/components/sections/ProductShelf/ProducTShelfCustom'
 
 import storeConfig from '../../store.config'
 
@@ -23,12 +26,14 @@ function Page({
   bubbleLinksCategoriesImgCollection,
   blockOurColectionsCollection,
   infoCardOurColectionsCollection,
+  productShelfCollection,
   categoryTilesHomeCollection,
   blockCollectionVerticalHomeCollection,
   infoCardCollectionVerticalHomeCollection,
   blocoMarcasCollection,
   dadosDasMarcasCollection,
 }: any) {
+  const [homeShelf] = [...productShelfCollection.items]
   const collections = infoCardOurColectionsCollection.items.sort(
     (a: any, b: any) => a?.order - b?.order
   )
@@ -82,6 +87,25 @@ function Page({
           data={collections}
         />
       )}
+      <Suspense fallback={<ProductShelfSkeleton loading />}>
+        {homeShelf.categoryCode && (
+          <ProductShelfCustom
+            itemsQuantity={[
+              homeShelf.itemsQuantifyOnMobile,
+              homeShelf.itemsQuantifyOnDesktop,
+            ]}
+            first={homeShelf.first}
+            selectedFacets={[
+              {
+                key: 'productClusterIds',
+                value: homeShelf.categoryCode,
+              },
+            ]}
+            title={homeShelf.title}
+            suspenseData
+          />
+        )}
+      </Suspense>
       {categoryTilesHomeCollection.items && (
         <section className="section layout__section layout__content no__pd--mosaico layout__wrapper">
           <div className="page__section-content">
@@ -114,6 +138,7 @@ export async function getStaticProps() {
     bubbleLinksCategoriesImgCollection,
     blockOurColectionsCollection,
     infoCardOurColectionsCollection,
+    productShelfCollection,
     categoryTilesHomeCollection,
     blockCollectionVerticalHomeCollection,
     infoCardCollectionVerticalHomeCollection,
@@ -128,6 +153,7 @@ export async function getStaticProps() {
       bubbleLinksCategoriesImgCollection,
       blockOurColectionsCollection,
       infoCardOurColectionsCollection,
+      productShelfCollection,
       categoryTilesHomeCollection,
       blockCollectionVerticalHomeCollection,
       infoCardCollectionVerticalHomeCollection,

@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@acctglobal/carousel-universal@^0.2.4":
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/@acctglobal/carousel-universal/-/carousel-universal-0.2.4.tgz#2235b8842f9a9fcf3c483c5ace011f6e963d9e20"
+  integrity sha512-wWLniW+LOVKepd3zUL9MHs6isPSEBquQGfeez8DsyU4MBjN8PCv/cc8fxa/JGSPabENwvdljLC6YuNOq6vNj1g==
+
 "@acctglobal/product-tags@^0.3.2":
   version "0.3.2"
   resolved "https://registry.yarnpkg.com/@acctglobal/product-tags/-/product-tags-0.3.2.tgz#9b69cf5aa7bef92a7efd7293d6cad169c38cf668"
