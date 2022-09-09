@@ -97,6 +97,7 @@
   flex-wrap: wrap;
   row-gap: var(--fs-sku-selector-row-gap);
   column-gap: var(--fs-sku-selector-column-gap);
+  margin-bottom: 20px;
   font-size: var(--fs-sku-selector-text-size);
 
   [data-fs-sku-selector-title] {

@@ -28,7 +28,10 @@
 
     li {
       width: 100%;
-      max-width: 20%;
+
+      @include media(">=tablet") {
+        max-width: 25%;
+      }
 
       &:first-child {
         margin-left: var(--fs-product-shelf-first-item-margin-left);

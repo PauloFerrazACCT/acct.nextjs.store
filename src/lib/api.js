@@ -137,7 +137,7 @@ async function fetchGraphQL(query) {
   ).then((response) => response.json())
 }
 
-export async function getAllPostsForHome() {
+export async function getDataForHome() {
   const { data } = await fetchGraphQL(
     `query HomePageQuery{
             ${POST_GRAPHQL_FIELDS}

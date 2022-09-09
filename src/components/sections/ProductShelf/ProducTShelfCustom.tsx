@@ -7,8 +7,6 @@ import useWindowDimensions from 'src/hooks/useWindowDimensions'
 
 import ProductCard from '../../product/ProductCard'
 import Section from '../Section'
-import styles from './product-shelf.module.scss'
-// import './new-product-shelf.scss'
 
 interface ProductShelfProps extends Partial<ProductsQueryQueryVariables> {
   title: string | JSX.Element
@@ -48,7 +46,7 @@ function ProductShelfCustom({
     >
       <div className="layout__wrapper">
         <h2 className="text__title-section layout__content">{title}</h2>
-        <div className={styles.fsProductShelf} data-fs-product-shelf>
+        <div data-fs-product-shelf>
           <ProductShelfSkeleton loading={products === undefined}>
             <Carousel
               bullet={{ isVisible: true, bulletEnableColor: '#77DA7A' }}
