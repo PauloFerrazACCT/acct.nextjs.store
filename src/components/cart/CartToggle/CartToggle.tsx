@@ -11,7 +11,7 @@ function CartToggle() {
       data-fs-button-icon
       data-fs-button-cart
       aria-label={`Cart with ${btnProps['data-items']} items`}
-      icon={<Icon name="ShoppingCart" width={32} height={32} />}
+      icon={<Icon name="ShoppingBag" width={24} height={20} />}
       {...btnProps}
     />
   )

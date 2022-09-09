@@ -69,6 +69,7 @@ function ProductDetails({ product: staleProduct }: Props) {
     },
   } = data
 
+  console.info(productId)
   const buyDisabled = availability !== 'https://schema.org/InStock'
 
   const buyProps = useBuyButton({

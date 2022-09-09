@@ -7,7 +7,7 @@
 
   // Default properties
   --fs-product-title-text-size: var(--fs-text-size-title-product);
-  --fs-product-title-text-weight: var(--fs-text-weight-regular);
+  --fs-product-title-text-weight: var(--fs-text-weight-bold);
   --fs-product-title-line-height: 1.12;
 
   --fs-product-title-addendum-margin-top: var(--fs-spacing-3);
@@ -26,6 +26,7 @@
   [data-fs-product-title-header] {
     display: flex;
     column-gap: var(--fs-spacing-2);
+    align-items: center;
     justify-content: space-between;
 
     // Title prop
