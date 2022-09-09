@@ -1,0 +1,38 @@
+@import "src/styles/scaffold";
+
+body {
+  .carousel-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  .carousel-arrow-button-prev button,
+  .carousel-arrow-button-next button {
+    cursor: pointer;
+    background-color: #ffffff;
+    border-radius: 40px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 24%);
+    transition: 0.5s;
+  }
+
+  .carousel-arrow-button-prev button:hover,
+  .carousel-arrow-button-next button:hover {
+    border-radius: 40px;
+    box-shadow: 0 8px 16px rgb(0 0 0 / 12%);
+  }
+
+  .carousel-container {
+    scrollbar-width: none;
+  }
+
+  .bullets-container button {
+    height: 5px !important; /* stylelint-disable-line declaration-no-important */
+  }
+}
+
+.layout__content {
+  &.no__pd--mosaico {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

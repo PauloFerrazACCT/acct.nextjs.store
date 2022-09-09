@@ -13,6 +13,7 @@ import {
   CollectionShelf,
   CollectionShelfVertical,
 } from 'src/components/sections/CollectionShelf'
+import { CategoryTiles } from 'src/components/sections/CategoryTiles'
 
 import storeConfig from '../../store.config'
 
@@ -22,6 +23,7 @@ function Page({
   bubbleLinksCategoriesImgCollection,
   blockOurColectionsCollection,
   infoCardOurColectionsCollection,
+  categoryTilesHomeCollection,
   blockCollectionVerticalHomeCollection,
   infoCardCollectionVerticalHomeCollection,
   blocoMarcasCollection,
@@ -80,6 +82,13 @@ function Page({
           data={collections}
         />
       )}
+      {categoryTilesHomeCollection.items && (
+        <section className="section layout__section layout__content no__pd--mosaico layout__wrapper">
+          <div className="page__section-content">
+            <CategoryTiles data={categoryTilesHomeCollection.items} />
+          </div>
+        </section>
+      )}
       {infoCardCollectionVerticalHomeCollection.items && (
         <CollectionShelfVertical
           {...blockCollectionVerticalHomeCollection.items[0]}
@@ -105,6 +114,7 @@ export async function getStaticProps() {
     bubbleLinksCategoriesImgCollection,
     blockOurColectionsCollection,
     infoCardOurColectionsCollection,
+    categoryTilesHomeCollection,
     blockCollectionVerticalHomeCollection,
     infoCardCollectionVerticalHomeCollection,
     blocoMarcasCollection,
@@ -118,6 +128,7 @@ export async function getStaticProps() {
       bubbleLinksCategoriesImgCollection,
       blockOurColectionsCollection,
       infoCardOurColectionsCollection,
+      categoryTilesHomeCollection,
       blockCollectionVerticalHomeCollection,
       infoCardCollectionVerticalHomeCollection,
       blocoMarcasCollection,
