@@ -7,15 +7,25 @@ const ButtonSignIn = () => {
   const { person } = useSession()
 
   return (
-    <ButtonLink
-      data-fs-button-signin-link
-      href={person?.id ? '/account' : '/login'}
-      className={`${styles.fsButton} text__title-mini`}
-      variant="tertiary"
-    >
-      <Icon name="User" width={18} height={18} weight="bold" />
-      <span>{person?.id ? 'My Account' : 'Sign In'}</span>
-    </ButtonLink>
+    <>
+      <ButtonLink
+        data-fs-button-signin-link
+        href={person?.id ? '/account' : '/login'}
+        className={`${styles.fsButton} text__title-mini signin-link`}
+        variant="tertiary"
+      >
+        <Icon name="User" width={24} height={20} weight="bold" />
+        {person?.id ? <span>My Account</span> : ''}
+      </ButtonLink>
+      <ButtonLink
+        data-fs-button-signin-link
+        href={person?.id ? '/account' : '/login'}
+        className={`${styles.fsButton} text__title-mini signin-link favorite-link`}
+        variant="tertiary"
+      >
+        <Icon name="Heart" width={24} height={20} weight="bold" />
+      </ButtonLink>
+    </>
   )
 }
 
