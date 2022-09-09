@@ -2,7 +2,7 @@ import { NextSeo, SiteLinksSearchBoxJsonLd } from 'next-seo'
 import { Suspense } from 'react'
 
 import { mark } from 'src/sdk/tests/mark'
-import { getAllPostsForHome } from 'src/lib/api'
+import { getDataForHome } from 'src/lib/api'
 import { CarouselBannerHome } from 'src/components/sections/CarouselBanner'
 import { incentivesMockHeader } from 'src/components/sections/Incentives/incentivesMock'
 import IncentivesHeader from 'src/components/sections/Incentives/IncentivesHeader'
@@ -16,7 +16,7 @@ import {
 } from 'src/components/sections/CollectionShelf'
 import { CategoryTiles } from 'src/components/sections/CategoryTiles'
 import ProductShelfSkeleton from 'src/components/skeletons/ProductShelfSkeleton'
-import ProductShelfCustom from 'src/components/sections/ProductShelf/ProducTShelfCustom'
+import ProductShelfCustom from 'src/components/sections/ProductShelf/ProductShelfCustom'
 
 import storeConfig from '../../store.config'
 
@@ -130,7 +130,7 @@ function Page({
 }
 
 export async function getStaticProps() {
-  const allData = (await getAllPostsForHome()) ?? []
+  const allData = (await getDataForHome()) ?? []
 
   const {
     carouselBannerHomeCollection,

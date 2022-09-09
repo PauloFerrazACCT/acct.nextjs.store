@@ -1,6 +1,118 @@
 @import "src/styles/scaffold";
 
-.breadcrumb {
-  padding-top: var(--fs-spacing-0);
-  padding-bottom: var(--fs-spacing-0);
+[data-store-breadcrumb] {
+  width: 100%;
+
+  @include media(">=notebook") {
+    width: 50%;
+  }
+
+  [data-breadcrumb-list] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    overflow-x: hidden;
+
+    [data-breadcrumb-list-item] {
+      display: inline-flex;
+      align-items: center;
+
+      &:first-child a {
+        display: inline-flex;
+        padding-left: 2px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 16px;
+        color: var(--fs-color-main-0);
+
+        &:hover {
+          background-color: transparent;
+        }
+      }
+
+      &:not(:first-child) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        @include media("<=tablet") {
+          max-width: 100%;
+        }
+      }
+
+      &:nth-child(2) {
+        overflow: visible;
+      }
+
+      @include media(">=notebook") {
+        &:nth-child(3) {
+          overflow: visible;
+        }
+
+        &:nth-child(2) {
+          overflow: hidden;
+        }
+      }
+    }
+
+    [data-breadcrumb-item] {
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: unset;
+      white-space: initial;
+
+      svg {
+        color: var(--fs-color-main-1);
+      }
+    }
+
+    [data-store-link] {
+      display: inline-flex;
+      width: 100%;
+      padding: 0;
+      margin: auto;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      color: var(--fs-color-main-1);
+
+      &:visited {
+        color: var(--fs-color-main-1);
+      }
+    }
+
+    [data-store-dropdown-button] {
+      display: inline;
+      padding: 0 calc(var(--fs-spacing-0) / 2);
+      margin: calc(var(--fs-spacing-0) / 4);
+      color: var(--fs-color-link);
+      letter-spacing: var(--fs-spacing-0);
+      cursor: pointer;
+      background-color: transparent;
+      border-width: 0;
+      transition:
+        var(--fs-transition-property) var(--fs-transition-timing)
+        var(--fs-transition-function);
+
+      &:focus,
+      &:focus-visible {
+        @include focus-ring;
+      }
+
+      span {
+        display: inline-block;
+        font-size: var(--fs-text-size-3);
+        font-weight: var(--fs-text-weight-bold);
+        transform: translate(rem(1px), rem(-6px));
+      }
+    }
+
+    [data-breadcrumb-item="current"] {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: initial;
+      color: #000000;
+    }
+  }
 }
