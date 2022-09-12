@@ -30,6 +30,7 @@
     "@acctglobal/product-tags": "^0.3.2",
     "@acctglobal/shareproduct": "^0.2.2",
     "@builder.io/partytown": "^0.6.1",
+    "@contentful/rich-text-react-renderer": "^15.12.1",
     "@envelop/core": "^1.2.0",
     "@envelop/graphql-jit": "^1.1.1",
     "@envelop/parser-cache": "^2.2.0",
