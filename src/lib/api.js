@@ -123,6 +123,53 @@ const POST_GRAPHQL_FIELDS = `
     }
   `
 
+const POST_GRAPHQL_FIELDS_INSTITUTIONAL_PAGE = `
+  bannerCollection(where: { name: "Institutional banner" }) {
+    items {
+      title
+      subtitle
+      description
+      imgDesktop {
+        url
+        title
+        width
+        height
+        description
+      }
+      imgMobile {
+        url
+        title
+        width
+        height
+        description
+      }
+      labelBtn
+      linkBtn
+    }
+  }
+  siteSeoCollection(where: { page: "Institutional" }) {
+    items {
+      title
+      description
+      canonicalLink
+      keyWords
+      ogType
+      ogTitle
+      ogUrl
+      ogDescription
+      ogImage
+      jsonLd
+    }
+  }
+  staticPagesContentCollection(where: { name: "Institutional" }) {
+      items {
+      content {
+        json
+      }
+    }
+  }
+`
+
 async function fetchGraphQL(query) {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -141,6 +188,16 @@ export async function getDataForHome() {
   const { data } = await fetchGraphQL(
     `query HomePageQuery{
             ${POST_GRAPHQL_FIELDS}
+        }`
+  )
+
+  return data
+}
+
+export async function getDataForInstitutionalPage() {
+  const { data } = await fetchGraphQL(
+    `query InstitutionalPage{
+            ${POST_GRAPHQL_FIELDS_INSTITUTIONAL_PAGE}
         }`
   )
 
