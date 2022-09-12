@@ -61,7 +61,7 @@ function CarouselBannerHome({ items }: TProps) {
                     src={imageMobile.url}
                     alt={banner.title}
                     width={360}
-                    height={240}
+                    height={400}
                     sizes="(max-width: 768px) 70vw, 50vw"
                   />
                 </div>
