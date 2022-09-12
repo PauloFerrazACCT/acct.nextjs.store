@@ -170,6 +170,320 @@ const POST_GRAPHQL_FIELDS_INSTITUTIONAL_PAGE = `
   }
 `
 
+const POST_GRAPHQL_FIELDS_CATEGORY_MEN = `
+dadosDasMarcasCollection {
+  items {
+    name
+    link
+    img {
+      url
+      title
+      width
+      height
+      description
+    }
+  }
+}
+blocoMarcasCollection {
+  items {
+    title
+    seeAllLink
+    linkText
+  }
+}
+blockOurColectionsCollection(where: { name: "Men Departament Our Collection" }) {
+  items {
+    title
+    description
+    seeAllText
+    seeAllLink
+  }
+}
+infoCardOurColectionsCollection(where: { name: "Men Departament Our Collection Cards" }
+) {
+  items {
+    title
+    description
+    image {
+      url
+      title
+      width
+      height
+      description
+    }
+    labelBtn
+    linkBtn
+    order
+  }
+}
+blockCardCollectionVerticalCollection(
+  where: { name: "Men Departament Vertical Our Collection"  }
+) {
+  items {
+    title
+    description
+    seeAllText
+    seeAllLink
+  }
+}
+infoCardCollectionVerticalCollection(where: { name: "Men Departament Vertical Our Collection Cards" }
+) {
+  items {
+    title
+    description
+    image {
+      url
+      title
+      width
+      height
+      description
+    }
+    labelBtn
+    linkBtn
+    order
+  }
+}
+bubbleLinksCategoriesTitleCollection {
+  items {
+    title
+  }
+}
+bubbleLinksCategoriesImgCollection {
+  items {
+    link
+    name
+    image {
+      url
+      title
+      width
+      height
+      description
+    }
+  }
+}
+mosaicoCollection(where: { name:  "Men Departament Mosaic" }) {
+  items {
+    image {
+      url
+      title
+      width
+      height
+      description
+    }
+    description
+    title
+    linkBtn
+    labelBtn
+    order
+  }
+}
+productShelfCollection(where: { name: "Men Departament Shelf" }
+) {
+  items {
+    title
+    itemsQuantifyOnMobile
+    itemsQuantifyOnDesktop
+    first
+    categoryCode
+    order
+  }
+}
+bannerCollection(where: { name: "Men Departament Banner" }) {
+  items {
+    title
+    subtitle
+    description
+    imgDesktop {
+      url
+      title
+      width
+      height
+      description
+    }
+    imgMobile {
+      url
+      title
+      width
+      height
+      description
+    }
+    labelBtn
+    linkBtn
+  }
+}
+siteSeoCollection(where: { page: "Men" }) {
+  items {
+    title
+    description
+    canonicalLink
+    keyWords
+    ogType
+    ogTitle
+    ogUrl
+    ogDescription
+    ogImage
+    jsonLd
+  }
+}
+`
+
+const POST_GRAPHQL_FIELDS_CATEGORY_WOMEN = `
+dadosDasMarcasCollection {
+  items {
+    name
+    link
+    img {
+      url
+      title
+      width
+      height
+      description
+    }
+  }
+}
+blocoMarcasCollection {
+  items {
+    title
+    seeAllLink
+    linkText
+  }
+}
+blockOurColectionsCollection(where: { name: "Women Departament Our Collection" }) {
+  items {
+    title
+    description
+    seeAllText
+    seeAllLink
+  }
+}
+infoCardOurColectionsCollection(where: { name: "Women Departament Our Collection Cards" }
+) {
+  items {
+    title
+    description
+    image {
+      url
+      title
+      width
+      height
+      description
+    }
+    labelBtn
+    linkBtn
+    order
+  }
+}
+blockCardCollectionVerticalCollection(
+  where: { name: "Women Departament Vertical Our Collection"  }
+) {
+  items {
+    title
+    description
+    seeAllText
+    seeAllLink
+  }
+}
+infoCardCollectionVerticalCollection(where: { name: "Women Departament Vertical Our Collection Cards" }
+) {
+  items {
+    title
+    description
+    image {
+      url
+      title
+      width
+      height
+      description
+    }
+    labelBtn
+    linkBtn
+    order
+  }
+}
+bubbleLinksCategoriesTitleCollection {
+  items {
+    title
+  }
+}
+bubbleLinksCategoriesImgCollection {
+  items {
+    link
+    name
+    image {
+      url
+      title
+      width
+      height
+      description
+    }
+  }
+}
+mosaicoCollection(where: { name:  "Women Departament Mosaic" }) {
+  items {
+    image {
+      url
+      title
+      width
+      height
+      description
+    }
+    description
+    title
+    linkBtn
+    labelBtn
+    order
+  }
+}
+productShelfCollection(where: { name: "Women Departament Shelf" }
+) {
+  items {
+    title
+    itemsQuantifyOnMobile
+    itemsQuantifyOnDesktop
+    first
+    categoryCode
+    order
+  }
+}
+bannerCollection(where: { name: "Women Departament Banner" }) {
+  items {
+    title
+    subtitle
+    description
+    imgDesktop {
+      url
+      title
+      width
+      height
+      description
+    }
+    imgMobile {
+      url
+      title
+      width
+      height
+      description
+    }
+    labelBtn
+    linkBtn
+  }
+}
+siteSeoCollection(where: { page: "Women" }) {
+  items {
+    title
+    description
+    canonicalLink
+    keyWords
+    ogType
+    ogTitle
+    ogUrl
+    ogDescription
+    ogImage
+    jsonLd
+  }
+}
+`
+
 async function fetchGraphQL(query) {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -198,6 +512,26 @@ export async function getDataForInstitutionalPage() {
   const { data } = await fetchGraphQL(
     `query InstitutionalPage{
             ${POST_GRAPHQL_FIELDS_INSTITUTIONAL_PAGE}
+        }`
+  )
+
+  return data
+}
+
+export async function getDataForCategoryMen() {
+  const { data } = await fetchGraphQL(
+    `query CategoryMenPage{
+            ${POST_GRAPHQL_FIELDS_CATEGORY_MEN}
+        }`
+  )
+
+  return data
+}
+
+export async function getDataForCategoryWomen() {
+  const { data } = await fetchGraphQL(
+    `query CategoryWomenPage{
+            ${POST_GRAPHQL_FIELDS_CATEGORY_WOMEN}
         }`
   )
 

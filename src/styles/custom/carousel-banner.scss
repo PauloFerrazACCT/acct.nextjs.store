@@ -50,6 +50,7 @@
 
 .carousel-banner__img-mobile img {
   height: 450px;
+  object-fit: cover;
 }
 
 .carousel-banner__title {
@@ -223,7 +224,7 @@
 [data-store-bullets] [data-bullet-item][aria-selected="false"] {
   padding: 0.125rem 0.75rem;
   margin: 1rem 0.25rem;
-  background-color: var(--fs-color-neutral-10);
+  background-color: var(--fs-color-neutral-4);
   border: none;
   border-radius: 0;
 }
@@ -231,7 +232,7 @@
 [data-store-bullets] [data-bullet-item][aria-selected="true"] {
   padding: 0.125rem 0.75rem;
   margin: 1rem 0.25rem;
-  background-color: var(--fs-color-neutral-11);
+  background-color: var(--fs-color-accent-3);
   border: none;
   border-radius: 0;
 }
