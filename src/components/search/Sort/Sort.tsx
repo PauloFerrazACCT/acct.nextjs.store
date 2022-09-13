@@ -22,7 +22,7 @@ function Sort() {
     <Select
       id="sort-select"
       className="sort / text__title-mini-alt"
-      label="Sort by"
+      label=""
       options={OptionsMap}
       onChange={(e) => {
         const sort = keys[e.target.selectedIndex]

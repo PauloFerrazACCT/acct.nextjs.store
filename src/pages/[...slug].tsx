@@ -15,7 +15,6 @@ import Breadcrumb from 'src/components/sections/Breadcrumb'
 import Hero from 'src/components/sections/Hero'
 import ProductGallery from 'src/components/sections/ProductGallery'
 import ProductShelf from 'src/components/sections/ProductShelf'
-import ScrollToTopButton from 'src/components/sections/ScrollToTopButton'
 import Icon from 'src/components/ui/Icon'
 import { ITEMS_PER_PAGE, ITEMS_PER_SECTION } from 'src/constants'
 import { useApplySearchState } from 'src/sdk/search/state'
@@ -25,6 +24,7 @@ import type {
   ServerCollectionPageQueryQuery,
   ServerCollectionPageQueryQueryVariables,
 } from '@generated/graphql'
+import ScrollToTopButtonCategory from 'src/components/sections/ScrollToTopButtonCategory'
 
 import storeConfig from '../../store.config'
 
@@ -117,7 +117,7 @@ function Page(props: Props) {
         withDivisor
       />
 
-      <ScrollToTopButton />
+      <ScrollToTopButtonCategory />
     </SearchProvider>
   )
 }

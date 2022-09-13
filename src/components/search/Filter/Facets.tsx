@@ -51,7 +51,11 @@ function Facets({
   onAccordionChange,
 }: FacetsProps) {
   return (
-    <div className={styles.fsFacets} data-store-filter data-testid={testId}>
+    <div
+      className={`${styles.fsFacets} ${styles.filter}`}
+      data-store-filter
+      data-testid={testId}
+    >
       <h2 className="text__title-mini-alt" data-fs-facets-title>
         Filters
       </h2>
@@ -80,7 +84,11 @@ function Facets({
                     const id = `${testId}-${facet.label}-${item.label}`
 
                     return (
-                      <li key={id} data-fs-facets-list-item>
+                      <li
+                        key={id}
+                        data-fs-facets-list-item
+                        className={`${styles.filter__item}`}
+                      >
                         <Checkbox
                           id={id}
                           checked={item.selected}

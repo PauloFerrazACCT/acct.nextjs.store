@@ -10,3 +10,50 @@
     padding-bottom: var(--fs-spacing-8);
   }
 }
+
+.pgCategory__wrapper--btnToTop {
+  position: relative;
+  min-width: 100%;
+
+  .scroll-to-top-button {
+    padding-bottom: 4rem;
+  }
+
+  button[data-fs-button] {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0;
+    width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    padding: 0;
+    overflow: hidden;
+    color: var(--fs-button-secondary-text-color-hover);
+    text-indent: -9999px;
+    background-color: var(--fs-color-neutral-7);
+    border-color: var(--fs-color-neutral-7);
+    border-radius: 0;
+    border-top-right-radius: var(--fs-btn-primary-radius);
+    border-bottom-right-radius: var(--fs-btn-primary-radius);
+    outline: none;
+
+    > span {
+      min-width: 100%;
+      margin-left: 0.5rem;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: var(--fs-color-neutral-7);
+      background-color: var(--fs-color-accent-3);
+      border-color: var(--fs-color-accent-3);
+    }
+
+    @include media(">=notebook") {
+      > span {
+        margin-left: 0.4rem;
+      }
+    }
+  }
+}
