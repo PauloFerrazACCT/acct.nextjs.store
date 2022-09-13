@@ -93,14 +93,34 @@ function CartItem({ item, gift = false }: Props) {
           <Image
             src={item.itemOffered.image[0].url}
             alt={item.itemOffered.image[0].alternateName}
-            width={72}
-            height={72}
+            width={100}
+            height={150}
           />
         </CardImage>
         <div data-fs-cart-item-summary>
           <p className="text__body" data-fs-cart-item-title>
             {item.itemOffered.isVariantOf.name}
           </p>
+          {!gift && (
+            <CardActions data-fs-cart-item-actions>
+              <QuantitySelector
+                min={1}
+                initial={item.quantity}
+                onChange={onQuantityChange}
+              />
+            </CardActions>
+          )}
+        </div>
+        <div data-fs-cart-item-buttons>
+          {!gift && (
+            <Button
+              variant="tertiary"
+              icon={<Icon name="Trash" width={40} height={40} />}
+              iconPosition="left"
+              {...btnProps}
+            />
+          )}
+          <div> </div>
           {!gift && (
             <span data-fs-cart-item-prices>
               <Price
@@ -125,24 +145,6 @@ function CartItem({ item, gift = false }: Props) {
           )}
         </div>
       </CardContent>
-
-      {!gift && (
-        <CardActions data-fs-cart-item-actions>
-          <Button
-            variant="tertiary"
-            icon={<Icon name="XCircle" width={18} height={18} />}
-            iconPosition="left"
-            {...btnProps}
-          >
-            Remove
-          </Button>
-          <QuantitySelector
-            min={1}
-            initial={item.quantity}
-            onChange={onQuantityChange}
-          />
-        </CardActions>
-      )}
     </Card>
   )
 }

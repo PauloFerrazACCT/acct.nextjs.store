@@ -4,21 +4,21 @@
   // --------------------------------------------------------
   // Design Tokens for EmptyState
   // --------------------------------------------------------
-  --fs-empty-state-height               : 100%;
-  --fs-empty-state-min-height           : 50vh;
-  --fs-empty-state-padding              : 0 var(--fs-spacing-8);
-  --fs-empty-state-bkg-color            : var(--fs-color-neutral-bkg);
+  --fs-empty-state-height: 100%;
+  --fs-empty-state-min-height: 50vh;
+  --fs-empty-state-padding: 0 var(--fs-spacing-8);
+  --fs-empty-state-bkg-color: var(--fs-color-neutral-0);
 
   // Title
-  --fs-empty-state-title-margin-bottom  : var(--fs-spacing-2);
-  --fs-empty-state-title-color          : var(--fs-color-disabled-text);
-  --fs-empty-state-title-size           : var(--fs-text-size-lead);
+  --fs-empty-state-title-margin-bottom: var(--fs-spacing-2);
+  --fs-empty-state-title-color: var(--fs-color-disabled-text);
+  --fs-empty-state-title-size: var(--fs-text-size-lead);
 
   // Link
-  --fs-empty-state-link-min-width       : 11.875rem;
+  --fs-empty-state-link-min-width: 11.875rem;
 
   // Rounded
-  --fs-empty-state-border-radius        : var(--fs-border-radius);
+  --fs-empty-state-border-radius: var(--fs-border-radius);
 
   // Default properties
   display: flex;
