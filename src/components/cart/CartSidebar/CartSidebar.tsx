@@ -38,9 +38,9 @@ function CartSidebar() {
       <header data-fs-cart-sidebar-header data-testid="cart-sidebar">
         <div data-fs-cart-sidebar-title>
           <p data-fs-cart-sidebar-title-text className="text__lead">
-            Your Cart
+            My bag
           </p>
-          <Badge variant="info">{totalItems}</Badge>
+          <Badge variant="success">{totalItems}</Badge>
         </div>
         <Button
           variant="tertiary"
@@ -52,9 +52,7 @@ function CartSidebar() {
           onClick={fadeOut}
         />
       </header>
-      <Alert icon={<Icon name="Truck" width={24} height={24} />}>
-        Free shipping starts at $300
-      </Alert>
+      <div data-fs-alert-shipping>Free shipping starts at $300</div>
 
       {isEmpty ? (
         <EmptyCart onDismiss={fadeOut} />

@@ -6,10 +6,13 @@
     justify-content: space-between;
     line-height: 1.5;
 
-    &[data-order-summary-discount] { color: var(--fs-color-success-text); }
+    &[data-order-summary-discount] {
+      color: var(--fs-color-success-text);
+    }
 
     &:last-of-type {
       margin-bottom: var(--fs-spacing-2);
+      font-weight: var(--fs-text-weight-bold);
     }
   }
 }

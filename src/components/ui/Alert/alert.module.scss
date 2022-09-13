@@ -4,23 +4,23 @@
   // --------------------------------------------------------
 
   // Default properties
-  --fs-alert-height                       : var(--fs-spacing-7);
-  --fs-alert-padding-left                 : var(--fs-spacing-3);
-  --fs-alert-padding-right                : var(--fs-alert-padding-left);
+  --fs-alert-height: var(--fs-spacing-7);
+  --fs-alert-padding-left: var(--fs-spacing-3);
+  --fs-alert-padding-right: var(--fs-alert-padding-left);
 
-  --fs-alert-bkg-color                    : var(--fs-color-highlighted-bkg);
+  --fs-alert-bkg-color: var(--fs-color-highlighted-bkg);
 
-  --fs-alert-text-color                   : var(--fs-color-highlighted-text);
-  --fs-alert-text-size                    : var(--fs-text-size-1);
+  --fs-alert-text-color: var(--fs-color-highlighted-text);
+  --fs-alert-text-size: var(--fs-text-size-1);
 
   // Link
-  --fs-alert-link-color                   : var(--fs-alert-text-color);
-  --fs-alert-link-color-visited           : var(--fs-alert-text-color);
+  --fs-alert-link-color: var(--fs-alert-text-color);
+  --fs-alert-link-color-visited: var(--fs-alert-text-color);
 
   // Button
-  --fs-alert-button-text-color            : var(--fs-alert-text-color);
-  --fs-alert-button-bkg-color             : var(--fs-alert-bkg-color);
-  --fs-alert-button-border-radius         : var(--fs-border-radius);
+  --fs-alert-button-text-color: var(--fs-alert-text-color);
+  --fs-alert-button-bkg-color: var(--fs-alert-bkg-color);
+  --fs-alert-button-border-radius: var(--fs-border-radius);
 
   // --------------------------------------------------------
   // Structural Styles
@@ -46,7 +46,9 @@
     white-space: nowrap;
   }
 
-  span { font-weight: var(--fs-text-weight-bold); }
+  span {
+    font-weight: var(--fs-text-weight-bold);
+  }
 
   [data-fs-alert-link] {
     min-width: 0;
@@ -59,7 +61,9 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 
-    &:visited { color: var(--fs-alert-link-color-visited); }
+    &:visited {
+      color: var(--fs-alert-link-color-visited);
+    }
   }
 
   [data-fs-alert-button] {
@@ -80,7 +84,9 @@
       border-radius: var(--fs-alert-button-border-radius);
     }
 
-    &:hover span { filter: brightness(0.95); }
+    &:hover span {
+      filter: brightness(0.95);
+    }
   }
 
   // --------------------------------------------------------
