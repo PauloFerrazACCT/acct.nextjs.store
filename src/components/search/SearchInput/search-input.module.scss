@@ -64,6 +64,12 @@
     width: 100%;
     height: var(--fs-search-input-height-mobile);
 
+    button[type="submit"] {
+      @include media("<notebook") {
+        height: 100%;
+      }
+    }
+
     @include media(">=notebook") { height: var(--fs-search-input-height-desktop); }
 
     [data-fs-search-input] {
