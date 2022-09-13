@@ -41,7 +41,7 @@
     }
 
     @include media(">=tablet", "<notebook") {
-      flex-direction: column;
+      // flex-direction: column;
       row-gap: var(--fs-spacing-3);
     }
   }

@@ -41,6 +41,12 @@
       background: var(--fs-color-accent-3);
     }
   }
+
+  &:nth-last-child(2) {
+    a {
+      background: var(--fs-color-neutral-1);
+    }
+  }
 }
 
 [fashion-ui-menu-ul] [fashion-ui-menu-li] > a {

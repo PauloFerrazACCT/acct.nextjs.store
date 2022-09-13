@@ -75,11 +75,14 @@
   display: grid;
   grid-template-rows: minmax(0, max-content);
   grid-auto-flow: row;
-  width: calc(100% - 5px);
+
+  // width: calc(100% - 5px);
+  width: 100%;
   min-width: 148px;
   max-width: 200px;
   height: 100%;
   padding: var(--fs-product-card-padding);
+  overflow: hidden;
   background-color: #fff; // var(--fs-product-card-bkg-color);
   border: var(--fs-product-card-border-width) solid #e0e0e0;
   border-radius: 4px;
@@ -192,6 +195,7 @@
 
   [data-fs-product-card-prices] {
     display: inline-flex;
+    flex-wrap: wrap;
     align-content: center;
 
     [data-variant="spot"] {
