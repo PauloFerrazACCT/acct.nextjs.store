@@ -101,14 +101,15 @@ function ProductGallery({ title, searchTerm }: Props) {
             data-fs-product-listing-filter-button-skeleton
           >
             <Button
+              className={`${styles['product-list__wrapper-filter']}`}
               variant="tertiary"
               data-testid="open-filter-button"
-              icon={<Icon name="FadersHorizontal" width={16} height={16} />}
+              icon={<Icon name="verticalFilterIcon" width={26} height={26} />}
               iconPosition="left"
               aria-label="Open Filters"
               onClick={openFilter}
             >
-              Filters
+              <span>Filters</span>
             </Button>
           </Skeleton>
         </div>

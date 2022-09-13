@@ -42,12 +42,17 @@ function FilterSlider({
       onDismiss={fadeOut}
       size="partial"
       direction="rightSide"
-      className={styles.fsFilterSlider}
+      className={`${styles.fsFilterSlider} ${styles['filter-modal__content']}`}
       onTransitionEnd={() => fade === 'out' && closeFilter()}
     >
       <div data-fs-filter-slider-content>
-        <header data-fs-filter-slider-header>
-          <h2 className="text__lead">Filters</h2>
+        <header
+          data-fs-filter-slider-header
+          className={`${styles['filter-modal__header']}`}
+        >
+          <h2 className={`text__lead ${styles['filter-text-lead']}`}>
+            Filters
+          </h2>
           <Button
             variant="tertiary"
             data-fs-button-icon
@@ -78,7 +83,10 @@ function FilterSlider({
           }
         />
       </div>
-      <footer data-fs-filter-slider-footer>
+      <footer
+        data-fs-filter-slider-footer
+        className={`${styles['filter-modal__footer']}`}
+      >
         <Button
           data-fs-filter-slider-footer-button-clear
           variant="secondary"
