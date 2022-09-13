@@ -12,6 +12,7 @@ import { mark } from 'src/sdk/tests/mark'
 import { useUI } from 'src/sdk/ui/Provider'
 import { useFadeEffect } from 'src/sdk/ui/useFadeEffect'
 
+import { MenuMobile } from '../MenuMobile'
 import styles from './navbar-slider.module.scss'
 // import NavLinks from './NavLinks'
 
@@ -49,9 +50,10 @@ function NavbarSlider() {
           onClick={fadeOut}
         />
       </header>
-      {/* <div data-fs-navbar-slider-content>
-        <NavLinks onClickLink={fadeOut} />
-      </div> */}
+      <div data-fs-navbar-slider-content>
+        <MenuMobile />
+        {/* <NavLinks onClickLink={fadeOut} /> */}
+      </div>
       <footer data-fs-navbar-slider-footer>
         <Suspense fallback={<ButtonSignInFallback />}>
           <ButtonSignIn />
