@@ -28,12 +28,13 @@
 
   display: flex;
   align-items: center;
+  justify-content: center;
   height: var(--fs-alert-height);
   padding-right: var(--fs-alert-padding-right);
   padding-left: var(--fs-alert-padding-left);
   font-size: var(--fs-alert-text-size);
   color: var(--fs-alert-text-color);
-  background-color: var(--fs-alert-bkg-color);
+  background-color: var(--fs-color-main-1);
 
   [data-store-icon] {
     padding-right: var(--fs-spacing-1);
@@ -66,9 +67,8 @@
     min-width: var(--fs-control-tap-size);
     height: 100%;
     padding: var(--fs-spacing-0);
-    margin-left: auto;
     color: var(--fs-alert-button-text-color);
-    background-color: var(--fs-alert-button-bkg-color);
+    background-color: var(--fs-color-main-1);
 
     > span {
       display: flex;
@@ -76,7 +76,7 @@
       justify-content: center;
       width: 100%;
       height: 100%;
-      background-color: var(--fs-alert-button-bkg-color);
+      background-color: var(--fs-color-main-1);
       border-radius: var(--fs-alert-button-border-radius);
     }
 
