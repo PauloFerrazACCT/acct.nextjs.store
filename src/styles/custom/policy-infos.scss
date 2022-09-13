@@ -1,0 +1,53 @@
+@import "src/styles/scaffold";
+
+.product-policy__content {
+  margin: 40px 0;
+  border-bottom: #cccccc 1px solid;
+}
+
+.policy-infos {
+  &__container {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+    height: 128px;
+    margin: 1.5rem 0 2.5rem;
+  }
+
+  &__delivery,
+  &__return {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    width: 185px;
+    height: 128px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 4px;
+
+    @include media("<=tablet") {
+      width: 315px;
+    }
+
+    p {
+      font-size: var(--fs-text-size-1);
+    }
+  }
+
+  &__link {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include media("<=notebook") {
+      text-decoration: underline;
+    }
+  }
+}

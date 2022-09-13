@@ -6,13 +6,13 @@
   // --------------------------------------------------------
 
   // Default properties
-  --fs-product-grid-gap-mobile        : var(--fs-grid-gap-0);
-  --fs-product-grid-gap-tablet        : var(--fs-product-grid-gap-mobile);
-  --fs-product-grid-gap-desktop       : var(--fs-grid-gap-2);
+  --fs-product-grid-gap-mobile: var(--fs-grid-gap-0);
+  --fs-product-grid-gap-tablet: var(--fs-product-grid-gap-mobile);
+  --fs-product-grid-gap-desktop: var(--fs-grid-gap-2);
 
-  --fs-product-grid-columns-mobile    : 2;
-  --fs-product-grid-columns-tablet    : 4;
-  --fs-product-grid-columns-desktop   : var(--fs-product-grid-columns-tablet);
+  --fs-product-grid-columns-mobile: 2;
+  --fs-product-grid-columns-tablet: 3;
+  --fs-product-grid-columns-desktop: var(--fs-product-grid-columns-tablet);
 
   // --------------------------------------------------------
   // Structural Styles

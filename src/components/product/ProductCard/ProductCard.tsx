@@ -124,6 +124,23 @@ function ProductCard({
               SRText="Sale Price:"
             />
           </div>
+          <div data-fs-product-card-price-mini>
+            <span>or </span>
+            <strong>3x </strong>
+            <span>of</span>
+            <strong>
+              <Price
+                value={spotPrice / 3}
+                formatter={useFormattedPrice}
+                testId="price"
+                data-value={spotPrice}
+                variant="spot"
+                classes="text__tiny"
+                SRText="Sale Price:"
+              />
+            </strong>
+            <span> interest-free</span>
+          </div>
         </div>
 
         {outOfStock ? (
