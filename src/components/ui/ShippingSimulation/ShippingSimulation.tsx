@@ -7,6 +7,7 @@ import { usePriceFormatter } from 'src/sdk/product/useFormattedPrice'
 import Icon from '../Icon'
 import InputText from '../InputText'
 import Link from '../Link'
+import Policy from '../PolicyInformation/PolicyInformation'
 import styles from './shipping-simulation.module.scss'
 import { useShippingSimulation } from './useShippingSimulation'
 
@@ -47,7 +48,7 @@ function ShippingSimulation({
       {...otherProps}
     >
       <h2 className="text__title-subsection" data-fs-shipping-simulation-title>
-        Shipping
+        Delivery
       </h2>
 
       <InputText
@@ -100,6 +101,9 @@ function ShippingSimulation({
           </Table>
         </>
       )}
+      <section className="product-policy__content">
+        <Policy />
+      </section>
     </section>
   )
 }

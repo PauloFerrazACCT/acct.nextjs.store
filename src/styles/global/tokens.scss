@@ -259,7 +259,7 @@ body {
   @include media(">=notebook") {
     --fs-control-tap-size:
       var(
-        --fs-spacing-7
+        --fs-spacing-6
       ); // This value can be smaller on desktops
   }
 
@@ -292,7 +292,7 @@ body {
   --fs-border-color-active: var(--fs-color-main-2);
   --fs-border-color-disabled: var(--fs-color-neutral-6);
 
-  --fs-border-color-light: var(--fs-color-neutral-2);
+  --fs-border-color-light: var(--fs-color-neutral-3);
   --fs-border-color-light-hover: var(--fs-color-neutral-3);
   --fs-border-color-light-active: var(--fs-color-neutral-3);
   --fs-border-color-light-disabled: var(--fs-color-neutral-5);

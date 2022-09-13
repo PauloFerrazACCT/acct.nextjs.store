@@ -94,7 +94,8 @@
   }
 
   [data-fs-shipping-simulation-table-row] {
-    background-color: var(--fs-shipping-simulation-table-row-bkg-color);
+    // background-color: var(--fs-shipping-simulation-table-row-bkg-color);
+    border: 1px solid #cccccc;
 
     &:nth-child(even) {
       background-color: var(--fs-shipping-simulation-table-row-even-bkg-color);
