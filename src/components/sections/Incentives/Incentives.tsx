@@ -1,4 +1,5 @@
 import { Incentive as UIIncentive, List as UIList } from '@faststore/ui'
+import Link from 'next/link'
 
 import Icon from 'src/components/ui/Icon'
 
@@ -38,27 +39,31 @@ function Incentives({
       <UIList variant="unordered" className="layout__content">
         {incentives.map((incentive, index) => (
           <li key={String(index)}>
-            <UIIncentive>
-              <Icon
-                data-fs-incentive-icon
-                name={incentive.icon}
-                width={32}
-                height={32}
-              />
-              <div data-fs-incentive-content>
-                {incentive.title && (
-                  <p data-fs-incentive-title>{incentive.title}</p>
-                )}
-                <span data-fs-incentive-description>
-                  {incentive.firstLineText}
-                </span>
-                {incentive.secondLineText && (
-                  <span data-fs-incentive-description>
-                    {incentive.secondLineText}
-                  </span>
-                )}
-              </div>
-            </UIIncentive>
+            <Link href="/benefits" passHref>
+              <a>
+                <UIIncentive>
+                  <Icon
+                    data-fs-incentive-icon
+                    name={incentive.icon}
+                    width={32}
+                    height={32}
+                  />
+                  <div data-fs-incentive-content>
+                    {incentive.title && (
+                      <p data-fs-incentive-title>{incentive.title}</p>
+                    )}
+                    <span data-fs-incentive-description>
+                      {incentive.firstLineText}
+                    </span>
+                    {incentive.secondLineText && (
+                      <span data-fs-incentive-description>
+                        {incentive.secondLineText}
+                      </span>
+                    )}
+                  </div>
+                </UIIncentive>
+              </a>
+            </Link>
           </li>
         ))}
       </UIList>

@@ -484,6 +484,53 @@ siteSeoCollection(where: { page: "Women" }) {
 }
 `
 
+const POST_GRAPHQL_FIELDS_BENEFITS_PAGE = `
+  bannerCollection(where: { name: "Benefits banner" }) {
+    items {
+      title
+      subtitle
+      description
+      imgDesktop {
+        url
+        title
+        width
+        height
+        description
+      }
+      imgMobile {
+        url
+        title
+        width
+        height
+        description
+      }
+      labelBtn
+      linkBtn
+    }
+  }
+  siteSeoCollection(where: { page: "Benefits" }) {
+    items {
+      title
+      description
+      canonicalLink
+      keyWords
+      ogType
+      ogTitle
+      ogUrl
+      ogDescription
+      ogImage
+      jsonLd
+    }
+  }
+  staticPagesContentCollection(where: { name: "Benefits" }) {
+      items {
+      content {
+        json
+      }
+    }
+  }
+`
+
 async function fetchGraphQL(query) {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -532,6 +579,16 @@ export async function getDataForCategoryWomen() {
   const { data } = await fetchGraphQL(
     `query CategoryWomenPage{
             ${POST_GRAPHQL_FIELDS_CATEGORY_WOMEN}
+        }`
+  )
+
+  return data
+}
+
+export async function getDataForBenefitsPage() {
+  const { data } = await fetchGraphQL(
+    `query CategoryWomenPage{
+            ${POST_GRAPHQL_FIELDS_BENEFITS_PAGE}
         }`
   )
 
