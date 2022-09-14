@@ -45,6 +45,10 @@
   &:nth-last-child(2) {
     a {
       background: var(--fs-color-neutral-1);
+
+      &:hover {
+        background: var(--fs-color-main-4);
+      }
     }
   }
 }
