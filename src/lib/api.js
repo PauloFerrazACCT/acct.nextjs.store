@@ -587,7 +587,7 @@ export async function getDataForCategoryWomen() {
 
 export async function getDataForBenefitsPage() {
   const { data } = await fetchGraphQL(
-    `query CategoryWomenPage{
+    `query CategoryBenefitsPage{
             ${POST_GRAPHQL_FIELDS_BENEFITS_PAGE}
         }`
   )
