@@ -1,8 +1,11 @@
 @import "src/styles/scaffold";
 
 .product-policy__content {
-  margin: 40px 0;
-  border-bottom: #cccccc 1px solid;
+  border-top: #cccccc 1px solid;
+
+  @include media("<=tablet") {
+    border-bottom: #cccccc 1px solid;
+  }
 }
 
 .policy-infos {
@@ -12,7 +15,7 @@
     align-items: flex-start;
     justify-content: center;
     height: 128px;
-    margin: 1.5rem 0 2.5rem;
+    margin: 2.5rem 0;
   }
 
   &__delivery,

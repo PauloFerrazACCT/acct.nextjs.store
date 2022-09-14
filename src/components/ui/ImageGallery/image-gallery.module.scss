@@ -42,6 +42,10 @@
     column-gap: var(--fs-image-gallery-gap-notebook);
   }
 
+  @include media("<tablet") {
+    order: -1;
+  }
+
   // --------------------------------------------------------
   // Variants Styles
   // --------------------------------------------------------
