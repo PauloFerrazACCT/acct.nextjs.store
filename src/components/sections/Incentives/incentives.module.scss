@@ -119,4 +119,10 @@
       border-right: var(--fs-incentives-border-width) solid var(--fs-incentives-border-color);
     }
   }
+
+  li {
+    * {
+      text-decoration: none;
+    }
+  }
 }
